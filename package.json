@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@pixiv/three-vrm": "^2.0.7",
     "@react-three/fiber": "^8.15.12",
     "@types/three": "^0.159.0",
     "next": "14.0.4",
