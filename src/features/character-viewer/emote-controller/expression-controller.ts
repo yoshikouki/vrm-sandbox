@@ -4,8 +4,8 @@ import {
   VRMExpressionManager,
   VRMExpressionPresetName,
 } from "@pixiv/three-vrm";
-import { AutoLookAt } from "./autoLookAt";
-import { AutoBlink } from "./autoBlink";
+import { AutoLookAt } from "./auto-look-at";
+import { AutoBlink } from "./auto-blink";
 
 /**
  * Expressionを管理するクラス

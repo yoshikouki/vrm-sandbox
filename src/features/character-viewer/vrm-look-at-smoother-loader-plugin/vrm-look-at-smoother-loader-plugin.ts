@@ -3,8 +3,8 @@ import {
   VRMLookAt,
   VRMLookAtLoaderPlugin,
 } from "@pixiv/three-vrm";
-import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
-import { VRMLookAtSmoother } from "./VRMLookAtSmoother";
+import { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { VRMLookAtSmoother } from "./vrm-look-at-smoother";
 
 export class VRMLookAtSmootherLoaderPlugin extends VRMLookAtLoaderPlugin {
   public get name(): string {

@@ -1,5 +1,5 @@
 import { VRMExpressionManager } from "@pixiv/three-vrm";
-import { BLINK_CLOSE_MAX, BLINK_OPEN_MAX } from "./emoteConstants";
+import { BLINK_CLOSE_MAX, BLINK_OPEN_MAX } from "./emote-constants";
 
 /**
  * 自動瞬きを制御するクラス

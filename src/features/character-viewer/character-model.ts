@@ -3,8 +3,8 @@
 import { VRM, VRMLoaderPlugin, VRMUtils } from "@pixiv/three-vrm";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { EmoteController } from "../emoteController/emoteController";
-import { VRMLookAtSmootherLoaderPlugin } from "./VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin";
+import { EmoteController } from "./emote-controller/emote-controller";
+import { VRMLookAtSmootherLoaderPlugin } from "./vrm-look-at-smoother-loader-plugin/vrm-look-at-smoother-loader-plugin";
 
 export class CharacterModel {
   public vrm?: VRM | null;
