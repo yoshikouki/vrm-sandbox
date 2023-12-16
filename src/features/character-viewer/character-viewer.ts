@@ -117,9 +117,9 @@ export class CharacterViewer {
       // if (vrma) this.model.loadAnimation(vrma);
 
       // HACK: アニメーションの原点がずれているので再生後にカメラ位置を調整する
-      // requestAnimationFrame(() => {
-      //   this.resetCamera();
-      // });
+      requestAnimationFrame(() => {
+        this.resetCamera();
+      });
     });
   }
 
