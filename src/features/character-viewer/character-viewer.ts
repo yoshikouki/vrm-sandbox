@@ -132,16 +132,15 @@ export class CharacterViewer {
 
   public resetCamera() {
     const headNode = this.model?.vrm?.humanoid.getNormalizedBoneNode("head");
+    if (!headNode) return;
 
-    if (headNode) {
-      const headWPos = headNode.getWorldPosition(new THREE.Vector3());
-      this._camera?.position.set(
-        this._camera.position.x,
-        headWPos.y,
-        this._camera.position.z
-      );
-      this._cameraControls?.target.set(headWPos.x, headWPos.y, headWPos.z);
-      this._cameraControls?.update();
-    }
+    const headWPos = headNode.getWorldPosition(new THREE.Vector3());
+    this._camera?.position.set(
+      this._camera.position.x,
+      headWPos.y,
+      this._camera.position.z
+    );
+    this._cameraControls?.target.set(headWPos.x, headWPos.y, headWPos.z);
+    this._cameraControls?.update();
   }
 }

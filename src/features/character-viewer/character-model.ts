@@ -3,12 +3,13 @@
 import { VRM, VRMLoaderPlugin, VRMUtils } from "@pixiv/three-vrm";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { VRMLookAtSmootherLoaderPlugin } from "./VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin";
 import { EmoteController } from "../emoteController/emoteController";
+import { VRMLookAtSmootherLoaderPlugin } from "./VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin";
 
 export class CharacterModel {
   public vrm?: VRM | null;
   public mixer?: THREE.AnimationMixer;
+  public emoteController?: EmoteController;
 
   private _lookAtTargetParent: THREE.Object3D;
 
@@ -39,5 +40,12 @@ export class CharacterModel {
     this.mixer = new THREE.AnimationMixer(vrm.scene);
 
     this.emoteController = new EmoteController(vrm, this._lookAtTargetParent);
+  }
+
+  public unLoadVrm() {
+    if (this.vrm) {
+      VRMUtils.deepDispose(this.vrm.scene);
+      this.vrm = null;
+    }
   }
 }
