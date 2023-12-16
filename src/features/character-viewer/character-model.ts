@@ -4,6 +4,7 @@ import { VRM, VRMLoaderPlugin, VRMUtils } from "@pixiv/three-vrm";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { EmoteController } from "./emote-controller/emote-controller";
+import { VRMAnimation } from "./vrm-animation/VRMAnimation";
 import { VRMLookAtSmootherLoaderPlugin } from "./vrm-look-at-smoother-loader-plugin/vrm-look-at-smoother-loader-plugin";
 
 export class CharacterModel {
@@ -47,5 +48,16 @@ export class CharacterModel {
       VRMUtils.deepDispose(this.vrm.scene);
       this.vrm = null;
     }
+  }
+
+  public async loadAnimation(vrmAnimation: VRMAnimation): Promise<void> {
+    const { vrm, mixer } = this;
+    if (vrm == null || mixer == null) {
+      throw new Error("You have to load VRM first");
+    }
+
+    const clip = vrmAnimation.createAnimationClip(vrm);
+    const action = mixer.clipAction(clip);
+    action.play();
   }
 }

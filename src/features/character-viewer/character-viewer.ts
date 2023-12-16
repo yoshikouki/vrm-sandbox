@@ -3,6 +3,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { CharacterModel } from "./character-model";
+import { loadVRMAnimation } from "./vrm-animation/loadVRMAnimation";
 
 export class CharacterViewer {
   public isReady: boolean;
@@ -113,8 +114,8 @@ export class CharacterViewer {
 
       this._scene.add(this.model.vrm.scene);
 
-      // const vrma = await loadVRMAnimation(buildUrl("/idle_loop.vrma"));
-      // if (vrma) this.model.loadAnimation(vrma);
+      const vrma = await loadVRMAnimation("/vrmas/idle_loop.vrma");
+      if (vrma) this.model.loadAnimation(vrma);
 
       // HACK: アニメーションの原点がずれているので再生後にカメラ位置を調整する
       requestAnimationFrame(() => {
