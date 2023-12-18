@@ -2,7 +2,7 @@
 
 import { VRM, VRMLoaderPlugin, VRMUtils } from "@pixiv/three-vrm";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { EmoteController } from "./emote-controller/emote-controller";
 import { VRMAnimation } from "./vrm-animation/VRMAnimation";
 import { VRMLookAtSmootherLoaderPlugin } from "./vrm-look-at-smoother-loader-plugin/vrm-look-at-smoother-loader-plugin";

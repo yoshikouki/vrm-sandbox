@@ -1,14 +1,14 @@
+import { GLTF as GLTFSchema } from "@gltf-transform/core";
+import { VRMHumanBoneName, VRMHumanBoneParentMap } from "@pixiv/three-vrm";
 import * as THREE from "three";
 import {
   GLTF,
   GLTFLoaderPlugin,
   GLTFParser,
-} from "three/examples/jsm/loaders/GLTFLoader";
-import { VRMAnimationLoaderPluginOptions } from "./VRMAnimationLoaderPluginOptions";
-import { GLTF as GLTFSchema } from "@gltf-transform/core";
-import { VRMCVRMAnimation } from "./VRMCVRMAnimation";
-import { VRMHumanBoneName, VRMHumanBoneParentMap } from "@pixiv/three-vrm";
+} from "three/addons/loaders/GLTFLoader.js";
 import { VRMAnimation } from "./VRMAnimation";
+import { VRMAnimationLoaderPluginOptions } from "./VRMAnimationLoaderPluginOptions";
+import { VRMCVRMAnimation } from "./VRMCVRMAnimation";
 import { arrayChunk } from "./utils/arrayChunk";
 
 const MAT4_IDENTITY = new THREE.Matrix4();
